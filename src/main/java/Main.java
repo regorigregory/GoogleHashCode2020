@@ -29,7 +29,7 @@ public class Main {
         for (String file : fileNames) {
             Library.globalID = 0;
             String filePath = fileRoot + file;
-            String outputFilename = "v8_rev_comparators_" + file;
+            String outputFilename = "v9_rev_comparators_" + file;
 
             SimpleTimer t = new SimpleTimer();
 
