@@ -116,7 +116,7 @@ public class Library implements Comparable{
         double thisValue = this.calculateMaxxPossibleGain();
         double otherValue = otherBook.calculateMaxxPossibleGain();
         
-        return thisValue>otherValue ? 1 : thisValue==otherValue ? 0 : -1;
+        return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
     }
     
 

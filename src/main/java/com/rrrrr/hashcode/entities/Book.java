@@ -26,9 +26,9 @@ public class Book implements Comparable{
         }
         
         Book otherBook = (Book) o;
-        double thisValue = this.getValue()/this.numberOfInstances;
+        double thisValue = this.getValue();//(this.numberOfInstances);
         //thisValue = thisValue*thisValue;
-        double otherValue = otherBook.getValue()/otherBook.numberOfInstances;
+        double otherValue = otherBook.getValue();//(otherBook.numberOfInstances);
         //otherValue = otherValue*otherValue;
         return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
         

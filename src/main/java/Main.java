@@ -1,6 +1,7 @@
 
 import com.rrrrr.hashcode.entities.Challange;
 import com.rrrrr.hashcode.entities.DataIO;
+import com.rrrrr.hashcode.entities.Library;
 import com.rrrrr.hashcode.entities.Proposal;
 import com.rrrrr.hashcode.entities.SimpleTimer;
 import solvers.DynamicProgrammingSolver;
@@ -22,13 +23,13 @@ public class Main {
         String outPath = "C:\\gdrive\\java_projects\\HashCode\\src\\main\\java\\output";
 
         //String[] fileNames = {"b.txt", "c_incunabula.txt", "d.txt", "e.txt", "f.txt"};
-        String[] fileNames = {"c_incunabula.txt", "d_tough_choices.txt", "e_so_many_books.txt", "f_libraries_of_the_world.txt"};
-        //String[] fileNames = {"c_incunabula.txt"};
+        String[] fileNames = {"b_read_on.txt" ,"c_incunabula.txt", "d_tough_choices.txt", "e_so_many_books.txt", "f_libraries_of_the_world.txt"};
+        //String[] fileNames = {"b_read_on.txt"};
 
         for (String file : fileNames) {
-
+            Library.globalID = 0;
             String filePath = fileRoot + file;
-            String outputFilename = "v4_dynamic_all_" + file;
+            String outputFilename = "v8_rev_comparators_" + file;
 
             SimpleTimer t = new SimpleTimer();
 

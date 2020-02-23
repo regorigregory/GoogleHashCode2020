@@ -96,7 +96,9 @@ public class DataIO {
             StringBuilder output = new StringBuilder();
             output.append(numLibrariesToSignUp);
             
-            
+            long score = 0;
+            List<Integer> scores = new LinkedList<>();
+
             for(int i=0; i<libs.size()-1; i++){
                 
                 Library currentLibrary = libs.get(i);
@@ -104,13 +106,22 @@ public class DataIO {
                 output.append("\n"+currentLibrary.getId() +" "+ tempBooksToSend.size());
                 
                 StringBuilder booksToSend = new StringBuilder();
-                tempBooksToSend.stream().forEach(b->booksToSend.append(b.toString()+" "));
+                tempBooksToSend.stream().forEach(
+                        b->{
+                    
+                    scores.add(b.getValue());
+                    booksToSend.append(b.toString()+" ");
+                            }
+                        );
                 
                 output.append("\n"+booksToSend.toString().trim());
-   
             }
             Files.writeString(fullPath, output);
+            Integer sum = scores.stream().reduce(Integer::sum).get();
+            System.out.println("Score: "+sum);
+
             System.out.println("Filepath:"+fullPath.toString());
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
