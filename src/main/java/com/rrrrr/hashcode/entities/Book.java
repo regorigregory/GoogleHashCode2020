@@ -30,7 +30,7 @@ public class Book implements Comparable{
         //thisValue = thisValue*thisValue;
         double otherValue = otherBook.getValue()/otherBook.numberOfInstances;
         //otherValue = otherValue*otherValue;
-        return thisValue>otherValue ? 1 : thisValue==otherValue ? 0 : -1;
+        return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
         
         
     }
