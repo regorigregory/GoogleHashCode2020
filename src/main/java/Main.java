@@ -11,31 +11,39 @@ import solvers.Solver;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Madero Padero
  */
 public class Main {
-    public static void main(String[] args){
-        String filePath = "C:\\gdrive\\java_projects\\HashCode\\src\\main\\java\\data\\d.txt";
+
+    public static void main(String[] args) {
+        String fileRoot = "C:\\gdrive\\java_projects\\HashCode\\src\\main\\java\\data\\";
         String outPath = "C:\\gdrive\\java_projects\\HashCode\\src\\main\\java\\output";
-        String outputFilename = "dynamic_d.txt";
-        
-        
-        SimpleTimer t = new SimpleTimer();
-        
-        System.out.println("Hello world!");
-        
-        Challange currentChallange = DataIO.getChallange(filePath);
-        
-        Solver selectedSolver = new DynamicProgrammingSolver();
-        t.timeIt();
-        Proposal solversSolution = selectedSolver.solve(currentChallange);
-        t.timeIt();
-        
-        DataIO.saveProposalToFile(solversSolution, outPath, outputFilename);
-        
-    
+
+        //String[] fileNames = {"b.txt", "c_incunabula.txt", "d.txt", "e.txt", "f.txt"};
+        String[] fileNames = {"c_incunabula.txt", "d_tough_choices.txt", "e_so_many_books.txt", "f_libraries_of_the_world.txt"};
+        //String[] fileNames = {"c_incunabula.txt"};
+
+        for (String file : fileNames) {
+
+            String filePath = fileRoot + file;
+            String outputFilename = "v4_dynamic_all_" + file;
+
+            SimpleTimer t = new SimpleTimer();
+
+            Challange currentChallange = DataIO.getChallange(filePath);
+
+            Solver selectedSolver = new DynamicProgrammingSolver();
+            t.timeIt();
+            Proposal solversSolution = selectedSolver.solve(currentChallange);
+            t.timeIt();
+            System.out.println("|----------------------- File " + outputFilename + " has been written, ready for submission---------------------|");
+
+            DataIO.saveProposalToFile(solversSolution, outPath, outputFilename);
+
+        }
+
     }
+
 }

@@ -36,8 +36,8 @@ public class DynamicProgrammingSolver implements Solver {
             //based on the books that has not been sent in the central repository
             LinkedList<Library> librariesStillAvailable = challangeDataWrapper.getLibraries();
             try {
-               librariesStillAvailable =  librariesStillAvailable.parallelStream().sorted().collect(Collectors.toCollection(LinkedList::new));
-               //Collections.sort(librariesStillAvailable);
+               //librariesStillAvailable =  librariesStillAvailable.parallelStream().sorted().collect(Collectors.toCollection(LinkedList::new));
+               Collections.sort(librariesStillAvailable);
             }catch (Exception e){
                 boolean ehraw = true;
                 e.printStackTrace();

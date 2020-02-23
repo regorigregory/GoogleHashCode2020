@@ -5,6 +5,7 @@
  */
 package com.rrrrr.hashcode.entities;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collector;
@@ -28,7 +29,7 @@ public class Library implements Comparable{
     private LinkedList<Book> books;
     private LinkedList<Book> booksToSend;
 
-    private int currentlyPossibleMaxValue = 0;
+    private double currentlyPossibleMaxValue = 0;
     
     
     
@@ -50,7 +51,7 @@ public class Library implements Comparable{
     
     
 
-    private int calculateMaxxPossibleGain() {
+    private double calculateMaxxPossibleGain() {
         
         LinkedList<Book> booksRemaining = this.getBooksRemaining();
         this.currentlyPossibleMaxValue = 0;
@@ -72,7 +73,7 @@ public class Library implements Comparable{
             if (sentBookCounter == maximumAmountOfBooks) {
                 return this.currentlyPossibleMaxValue;
             }
-
+            
             for (int i = 0; i < this.booksPerDay; i++) {
 
                 Book temp = booksRemaining.get(sentBookCounter);
@@ -86,7 +87,9 @@ public class Library implements Comparable{
         return this.currentlyPossibleMaxValue;
     }
     public LinkedList<Book> getBooksRemaining(){
-        return this.books.stream().filter(b->b.isSent() == false).collect(Collectors.toCollection(LinkedList::new));
+        LinkedList<Book> books = this.books.stream().filter(b->b.isSent() == false).collect(Collectors.toCollection(LinkedList::new));
+        Collections.sort(books);
+        return books;
     }
     
     public void sendBooks(){
@@ -94,10 +97,10 @@ public class Library implements Comparable{
     }
     
     
-    public static int getBooksValue(List<Book> availableBooks) {
-        int value = 0;
+    public static double getBooksValue(List<Book> availableBooks) {
+        double value = 0;
         for (Book b : availableBooks) {
-            value += b.getValue();
+            value += b.getValue()/b.getNumberOfInstances();
 
         }
         return value;
@@ -110,8 +113,8 @@ public class Library implements Comparable{
         }
         
         Library otherBook = (Library) o;
-        int thisValue = this.calculateMaxxPossibleGain();
-        int otherValue = otherBook.calculateMaxxPossibleGain();
+        double thisValue = this.calculateMaxxPossibleGain();
+        double otherValue = otherBook.calculateMaxxPossibleGain();
         
         return thisValue>otherValue ? 1 : thisValue==otherValue ? 0 : -1;
     }
@@ -186,7 +189,7 @@ public class Library implements Comparable{
         this.booksToSend = booksToSend;
     }
 
-    public int getCurrentlyPossibleMaxValue() {
+    public double getCurrentlyPossibleMaxValue() {
         return currentlyPossibleMaxValue;
     }
 

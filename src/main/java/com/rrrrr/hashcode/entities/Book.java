@@ -12,7 +12,7 @@ package com.rrrrr.hashcode.entities;
 public class Book implements Comparable{
     private int id;
     private int value;
-    private int instances = 0;
+    private int numberOfInstances = 0;
     private boolean sent = false;
 
     public Book(int id, int value) {
@@ -26,9 +26,10 @@ public class Book implements Comparable{
         }
         
         Book otherBook = (Book) o;
-        int thisValue = this.getValue();
-        int otherValue = otherBook.getValue();
-        
+        double thisValue = this.getValue()/this.numberOfInstances;
+        //thisValue = thisValue*thisValue;
+        double otherValue = otherBook.getValue()/otherBook.numberOfInstances;
+        //otherValue = otherValue*otherValue;
         return thisValue>otherValue ? 1 : thisValue==otherValue ? 0 : -1;
         
         
@@ -82,5 +83,17 @@ public class Book implements Comparable{
     @Override
     public String toString(){
         return Integer.toString(this.getId());
+    }
+
+    public int getNumberOfInstances() {
+        return numberOfInstances;
+    }
+
+    public void setNumberOfInstances(int numberOfInstances) {
+        this.numberOfInstances = numberOfInstances;
+    }
+    
+    public void incrementNumberOfInstances(){
+        this.numberOfInstances+=1;
     }
 }

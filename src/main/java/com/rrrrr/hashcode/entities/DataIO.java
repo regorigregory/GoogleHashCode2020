@@ -62,8 +62,9 @@ public class DataIO {
 
             for (String stringValue : booksInTheLibrary) {
                 int nextBook = Integer.parseInt(stringValue);
-
-                newLibrary.getBooks().add(cat.getEveryBook().get(nextBook));
+                Book bookToAdd = cat.getEveryBook().get(nextBook);
+                bookToAdd.incrementNumberOfInstances();
+                newLibrary.getBooks().add(bookToAdd);
 
             }
             libraries.add(newLibrary);
@@ -109,7 +110,7 @@ public class DataIO {
    
             }
             Files.writeString(fullPath, output);
-            System.out.println("The proposal has been written to the file:"+fullPath.toString());
+            System.out.println("Filepath:"+fullPath.toString());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
