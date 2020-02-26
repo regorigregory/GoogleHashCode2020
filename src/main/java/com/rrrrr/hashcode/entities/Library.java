@@ -16,20 +16,22 @@ import java.util.stream.Collectors;
  * @author Madero Padero
  */
 public class Library implements Comparable{
+        //implements Comparable{
     
-    
+    public static double magic = 1;
     public static long globalDaysRemaining;
     public static int globalID = 0;
     
        
     private int id;
-    private int registrationDays;
+    private int signupTimeNeeded;
     private int booksPerDay;
 
     private LinkedList<Book> books;
     private LinkedList<Book> booksToSend;
 
     private double currentlyPossibleMaxValue = 0;
+    private boolean hasRegistered;
     
     
     
@@ -39,14 +41,14 @@ public class Library implements Comparable{
         globalID++;
         this.booksPerDay = booksPerDay;
         this.books = new LinkedList<Book>();
-        this.registrationDays = registrationDays;
+        this.signupTimeNeeded = registrationDays;
     }
     public Library(int booksPerDay, int registrationDays, LinkedList<Book> books) {
         this.id = globalID;
         globalID++;
         this.booksPerDay = booksPerDay;
         this.books = books;
-        this.registrationDays = registrationDays;
+        this.signupTimeNeeded = registrationDays;
     }
     
     
@@ -57,7 +59,7 @@ public class Library implements Comparable{
         this.currentlyPossibleMaxValue = 0;
         this.booksToSend = new LinkedList<>();
         
-        long realDaysRemaining = globalDaysRemaining - this.registrationDays;
+        long realDaysRemaining = globalDaysRemaining - this.signupTimeNeeded;
         long maximumAmountOfBooks = realDaysRemaining * this.booksPerDay;
 
         if (maximumAmountOfBooks > booksRemaining.size()) {
@@ -100,32 +102,20 @@ public class Library implements Comparable{
     public static double getBooksValue(List<Book> availableBooks) {
         double value = 0;
         for (Book b : availableBooks) {
-            value += b.getValue()/b.getNumberOfInstances();
+            value += b.getValue();///b.getNumberOfInstances();
 
         }
         return value;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        if (!(o instanceof Library)){
-            throw new IllegalArgumentException("Trying to compare non-library object to library object.");
-        }
-        
-        Library otherBook = (Library) o;
-        double thisValue = this.calculateMaxxPossibleGain();
-        double otherValue = otherBook.calculateMaxxPossibleGain();
-        
-        return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
-    }
-    
+ 
 
     
     @Override
     public int hashCode() {
         long hash = 7;
         hash = 61 * hash + this.id;
-        hash = 61 * hash + this.registrationDays;
+        hash = 61 * hash + this.signupTimeNeeded;
         
         return (int) hash;
     }
@@ -156,12 +146,12 @@ public class Library implements Comparable{
         this.id = id;
     }
 
-    public int getRegistrationDays() {
-        return registrationDays;
+    public int getSignupTimeNeeded() {
+        return signupTimeNeeded;
     }
 
-    public void setRegistrationDays(int registrationDays) {
-        this.registrationDays = registrationDays;
+    public void setSignupTimeNeeded(int signupTimeNeeded) {
+        this.signupTimeNeeded = signupTimeNeeded;
     }
 
     public int getBooksPerDay() {
@@ -196,6 +186,44 @@ public class Library implements Comparable{
     public void setCurrentlyPossibleMaxValue(int currentlyPossibleMaxValue) {
         this.currentlyPossibleMaxValue = currentlyPossibleMaxValue;
     }
+
+    public static long getGlobalDaysRemaining() {
+        return globalDaysRemaining;
+    }
+
+    public static void setGlobalDaysRemaining(long globalDaysRemaining) {
+        Library.globalDaysRemaining = globalDaysRemaining;
+    }
+
+    public static int getGlobalID() {
+        return globalID;
+    }
+
+    public static void setGlobalID(int globalID) {
+        Library.globalID = globalID;
+    }
+
+    public boolean isHasRegistered() {
+        return hasRegistered;
+    }
+
+    public void setHasRegistered(boolean hasRegistered) {
+        this.hasRegistered = hasRegistered;
+    }
+    
+    @Override
+    public int compareTo(Object o) {
+        if (!(o instanceof Library)){
+            throw new IllegalArgumentException("Trying to compare non-library object to library object.");
+        }
+        
+        Library otherBook = (Library) o;
+        double thisValue = this.calculateMaxxPossibleGain()/Math.pow(this.getSignupTimeNeeded(), magic);//(this.getSignupTimeNeeded()*this.getSignupTimeNeeded());
+        double otherValue = otherBook.calculateMaxxPossibleGain()/Math.pow(otherBook.getSignupTimeNeeded(), magic);//(otherBook.getSignupTimeNeeded()*otherBook.getSignupTimeNeeded());
+        
+        return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
+    }
+    
     
     
     

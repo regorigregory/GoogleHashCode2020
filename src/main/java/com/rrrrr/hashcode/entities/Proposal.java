@@ -26,6 +26,16 @@ public class Proposal {
         this.booksPerLibraryToSend = booksPerLibraryToSend;
     }
 
+    public Proposal copy() {
+        LinkedList<Library> tempLibrariesToRegisterInOrder = new LinkedList(this.librariesToRegisterInOrder);
+        LinkedList<LinkedList<Book>> tempBooksPerLibraryToSend = new LinkedList(this.booksPerLibraryToSend);
+        return new Proposal(tempLibrariesToRegisterInOrder, tempBooksPerLibraryToSend);
+    }
+
+    public int calculateScore(int daysRemaining) {
+        throw new UnsupportedOperationException("Yet to be implemented");
+    }
+
     public LinkedList<Library> getLibrariesToRegisterInOrder() {
         return librariesToRegisterInOrder;
     }

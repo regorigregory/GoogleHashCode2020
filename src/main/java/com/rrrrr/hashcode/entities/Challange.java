@@ -15,11 +15,17 @@ public class Challange {
     Catalogue ct;
     LinkedList<Library> libraries;
     int daysGivenToscan;
+    byte[][] binaryCatalogue;
+    int[] numberOfBooks;
 
-    public Challange(Catalogue ct, LinkedList<Library> libraries, int daysGivenToscan) {
+
+    public Challange(Catalogue ct, LinkedList<Library> libraries, int daysGivenToscan, byte[][] binaryCatalogue, int[] numberOfBooks) {
         this.ct = ct;
         this.libraries = libraries;
         this.daysGivenToscan = daysGivenToscan;
+        this.binaryCatalogue = binaryCatalogue;
+        this.numberOfBooks = numberOfBooks;
+
     }
 
     public Catalogue getCt() {
@@ -45,6 +51,23 @@ public class Challange {
     public void setDaysGivenToscan(int daysGivenToscan) {
         this.daysGivenToscan = daysGivenToscan;
     }
+
+    public byte[][] getBinaryCatalogue() {
+        return binaryCatalogue;
+    }
+
+    public void setBinaryCatalogue(byte[][] binaryCatalogue) {
+        this.binaryCatalogue = binaryCatalogue;
+    }
+
+    public int[] getNumberOfBooks() {
+        return numberOfBooks;
+    }
+
+    public void setNumberOfBooks(int[] numberOfBooks) {
+        this.numberOfBooks = numberOfBooks;
+    }
+    
     
     
     
