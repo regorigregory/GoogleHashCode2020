@@ -30,10 +30,10 @@ public class Main {
         //String[] fileNames = {"b.txt", "c_incunabula.txt", "d.txt", "e.txt", "f.txt"};
         //String[] fileNames = {"b_read_on.txt" ,"c_incunabula.txt", "d_tough_choices.txt", "e_so_many_books.txt", "f_libraries_of_the_world.txt"};
         //String[] fileNames = {"b_read_on.txt"};
-        String[] fileNames = {"e_so_many_books.txt", "f_libraries_of_the_world.txt"};
+        String[] fileNames = {"f_libraries_of_the_world.txt"};
         //do anding....
-        double[] bookMagics = {1};
-        double[] libraryMagics = {0.825, 0.85, 0.875, 0.925, 0.95};
+        double[] bookMagics = {0.7, 0.8, 0.9, 1.1, 1.2};
+        double[] libraryMagics ={0.875, 0.9, 0.925, 0.95};
         for (String file : fileNames) {
 
             for (Double bm : bookMagics) {

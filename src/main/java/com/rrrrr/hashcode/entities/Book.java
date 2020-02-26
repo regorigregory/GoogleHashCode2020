@@ -55,7 +55,7 @@ public class Book implements Comparable {
         }
 
         Book otherBook = (Book) o;
-        double thisValue = this.getValue()/Math.pow(this.getNumberOfInstances(),magic);
+        double thisValue = this.getValue()/(Math.pow(this.getNumberOfInstances(),magic));
         //double thisValue = this.getNumberOfInstances();
 
         //thisValue = thisValue*thisValue;
@@ -64,10 +64,10 @@ public class Book implements Comparable {
         int valueA = this.getValue();
         int valueB = otherBook.getValue();
 
-        if (valueA != valueB) {
-        return valueA > valueB ? -1 : valueA == valueB ? 0 : 1;
-
-        }
+//        if (valueA != valueB) {
+//        return valueA > valueB ? -1 : valueA == valueB ? 0 : 1;
+//
+//        }
         return thisValue > otherValue ? 1 : thisValue == otherValue ? 0 : -1;
 //otherValue = otherValue*otherValue;
     }
