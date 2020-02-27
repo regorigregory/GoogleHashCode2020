@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
  *
  * @author Madero Padero
  */
-public class Library implements Comparable{
+public class Library implements Comparable, CanCopyMe{
         //implements Comparable{
     
     public static double magic = 1;
     public static long globalDaysRemaining;
     public static int globalID = 0;
-    
+    public long localDaysRemining=0;
        
     private int id;
     private int signupTimeNeeded;
@@ -35,13 +35,21 @@ public class Library implements Comparable{
     
     
     
-    
+    public Library(Library otherLibrary){
+        this.id = otherLibrary.id;
+        this.localDaysRemining = otherLibrary.localDaysRemining;
+        this.booksPerDay = otherLibrary.booksPerDay;
+        this.books = new LinkedList(otherLibrary.books);
+        this.signupTimeNeeded = otherLibrary.signupTimeNeeded;
+
+    }
     public Library(int booksPerDay, int registrationDays) {
         this.id = globalID;
         globalID++;
         this.booksPerDay = booksPerDay;
         this.books = new LinkedList<Book>();
         this.signupTimeNeeded = registrationDays;
+        this.localDaysRemining = globalDaysRemaining;
     }
     public Library(int booksPerDay, int registrationDays, LinkedList<Book> books) {
         this.id = globalID;
@@ -223,7 +231,29 @@ public class Library implements Comparable{
         
         return thisValue>otherValue ? -1 : thisValue==otherValue ? 0 : 1;
     }
+
+    public static double getMagic() {
+        return magic;
+    }
+
+    public static void setMagic(double magic) {
+        Library.magic = magic;
+    }
+
+    public long getLocalDaysRemining() {
+        return localDaysRemining;
+    }
+
+    public void setLocalDaysRemining(long localDaysRemining) {
+        this.localDaysRemining = localDaysRemining;
+    }
     
+    
+    
+    
+      public CanCopyMe copyMe(){
+          return new Library(this);
+      }
     
     
     

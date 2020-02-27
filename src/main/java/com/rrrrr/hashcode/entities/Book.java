@@ -12,7 +12,7 @@ import java.util.function.Function;
  *
  * @author Madero Padero
  */
-public class Book implements Comparable {
+public class Book implements Comparable, CanCopyMe{
     
     public static CompareByInstanceCount COMPARE_BY_COUNT = new CompareByInstanceCount();
     
@@ -23,10 +23,21 @@ public class Book implements Comparable {
     private boolean sent = false;
 
     public static double magic = 0.7;
-
+    
+    
+    public Book(Book otherBook){
+        this.id = otherBook.id;
+        this.value = otherBook.value;
+        this.numberOfInstances = otherBook.numberOfInstances;
+        this.sent = otherBook.sent;
+    }
     public Book(int id, int value) {
         this.id = id;
         this.value = value;
+    }
+
+      public CanCopyMe copyMe(){
+        return new Book(this);
     }
 
     public static class CompareByInstanceCount implements Comparator {
