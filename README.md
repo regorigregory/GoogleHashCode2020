@@ -4,10 +4,12 @@
 
 
 ### Contents:
-Practice and qualification round solutions
+<ul>
+<li>Practice</li>
+<li>and qualification round solutions</li>
 
-
-Qualification round solutions:
+</ul>
+Qualification round solutions:<br>
     GreedeySolver:
         This is based on a simple (greedy approach) optimisation algorithm.
     
@@ -27,21 +29,22 @@ Qualification round solutions:
     Other solvers are in progress.
 
 
-Practice round solutions:
-    Yet to be uploaded
+Practice round solutions: Coming soon.
 
-Intended to be done/uploaded: 
-    1. Including Lucas's brute force approach
-    2. Uploading the first solution for the practice round:
-        A: Genetic algorithm in python
-        B: Google's ORTools -> knapsack solver -> Jupyter notebook
-        
-    2. Genetic algorithm based optimisation. Have started, not implemented.
-    3. Knapsack solver inspired optimisation. Have started, not implemented.
-    4. Data analysis and visualisation for greater insight. Have not even started.
+Intended to be done/uploaded:<br>
+<ol>
+    <li>. Including Lucas's brute force approach </li>
+    <li>. Uploading the first solution for the practice round:
+        <ul>
+            <li>Genetic algorithm in python</li>
+            <li>Google's ORTools -> knapsack solver -> Jupyter notebook</li>
+        </ul>
+    <li>2. Genetic algorithm based optimisation. Have started, not implemented.</li>
+    <li>3. Knapsack solver inspired optimisation. Have started, not implemented.</li>
+    <li>4. Data analysis and visualisation for greater insight. Have not even started.</li>
+</ol>
 
-
-
+On a personal note:
 
 This has been my first challange of this kind and was surprised that actually my solution, 
 which ranked us within the top 200 worldwide, and top 10 in the UK was this straightforward.
