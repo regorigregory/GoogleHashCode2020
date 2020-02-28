@@ -11,7 +11,7 @@ import java.util.LinkedList;
  *
  * @author Madero Padero
  */
-public class Catalogue {
+public class Catalogue implements CanCopyMe{
     private LinkedList<Book> everyBook;
     
     public Catalogue(String[] bookValues) {
@@ -25,6 +25,10 @@ public class Catalogue {
         
         
         this.everyBook = everyBook;
+    }
+    
+    public CanCopyMe copyMe(){
+        throw new UnsupportedOperationException("Yet to be implemented");
     }
     public Catalogue(LinkedList<Book> everyBook) {
         this.everyBook = everyBook;

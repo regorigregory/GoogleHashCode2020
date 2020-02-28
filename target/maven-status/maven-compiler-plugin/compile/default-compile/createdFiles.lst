@@ -1,0 +1,15 @@
+com\rrrrr\hashcode\entities\Library.class
+solvers\GreedySolver.class
+com\rrrrr\hashcode\entities\Book$CompareByInstanceCount.class
+com\rrrrr\hashcode\entities\DataIO.class
+com\rrrrr\hashcode\entities\Proposal.class
+com\rrrrr\hashcode\entities\Book$CompareByNumberOfInstances.class
+com\rrrrr\hashcode\entities\Book.class
+solvers\AssignmentProblemSolver.class
+Main.class
+com\rrrrr\hashcode\entities\Catalogue.class
+solvers\KnapsackSolver.class
+solvers\GeneticSolver.class
+solvers\Solver.class
+com\rrrrr\hashcode\entities\Challange.class
+com\rrrrr\hashcode\entities\SimpleTimer.class
