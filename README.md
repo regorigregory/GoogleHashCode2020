@@ -4,9 +4,9 @@
 <h1> Team Members </h1>
 
 <ul>
-    <li><a mailto="K1736700@kingston.ac.uk"> Lawes, Lucas </a> > </li>
-    <li>a mailto="k1715939@kingston.ac.uk"> Spyropoulos, Spiro </a></li>
-    <li><a mailto="k1715939@kingston.ac.uk"> Endresz, Gergo </a> </li>
+    <li><a href="mailto:K1736700@kingston.ac.uk"> Lawes, Lucas </a>  </li>
+    <li><a href="mailto:k1715939@kingston.ac.uk"> Spyropoulos, Spiro </a></li>
+    <li><a href="mailto:k1721863@kingston.ac.uk" > Endresz, Gergo </a> </li>
 
 </ul>
 
