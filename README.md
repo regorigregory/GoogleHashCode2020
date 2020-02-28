@@ -1,12 +1,16 @@
 # GoogleHashCode2020
-One of our solution for Google Hashcode's library challange (2020) > 26.8 million
+### One of our solution for Google Hashcode's library challange (2020) > 26.8 million
 
 
 
-Contents: 
+### Contents:
+Practice and qualification round solutions
+
+
+Qualification round solutions:
     GreedeySolver:
         This is based on a simple (greedy approach) optimisation algorithm.
-
+    
         The things that improved on the initial 18M score:
         
         I factored into the number of instances of books into the compareTo method of the book class.
@@ -18,19 +22,23 @@ Contents:
         Apart from that, it is pretty much common-sense.
         
         Have fun experimenting with these "magic numbers", changing the comparators etc. 
-
+    
         
     Other solvers are in progress.
-    
-    Intended to be done/uploaded: 
-        1. Including Lucas's brute force approach
-        2. Uploading the first solution for the practice round:
-            A: Genetic algorithm in python
-            B: Google's ORTools -> knapsack solver -> Jupyter notebook
-            
-        2. Genetic algorithm based optimisation. Have started, not implemented.
-        3. Knapsack solver inspired optimisation. Have started, not implemented.
-        4. Data analysis and visualisation for greater insight. Have not even started.
+
+
+Practice round solutions:
+    Yet to be uploaded
+
+Intended to be done/uploaded: 
+    1. Including Lucas's brute force approach
+    2. Uploading the first solution for the practice round:
+        A: Genetic algorithm in python
+        B: Google's ORTools -> knapsack solver -> Jupyter notebook
+        
+    2. Genetic algorithm based optimisation. Have started, not implemented.
+    3. Knapsack solver inspired optimisation. Have started, not implemented.
+    4. Data analysis and visualisation for greater insight. Have not even started.
 
 
 
