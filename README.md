@@ -39,7 +39,7 @@ library's compareTo method which was used to get their order.</li>
 <p>Have fun experimenting with these "magic numbers", changing the comparators etc. </p>
     
         
-    <p>Other solvers are in progress.</p>
+<p>Other solvers are in progress.</p>
 
 
 <h2>Practice round solutions: <strike>Coming soon.</strike></h2>
